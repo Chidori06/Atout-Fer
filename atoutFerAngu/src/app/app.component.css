@@ -1,0 +1,16 @@
+*,
+form,
+span.nb {
+    font-family: 'Inter', sans-serif;
+}
+
+.titre,
+h5.card-title {
+    font-family: 'Just Another Hand', cursive;
+    font-size: 3rem;
+    color: #383737;
+}
+
+h1 {
+    color: #383737;
+}

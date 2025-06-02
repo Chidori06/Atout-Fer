@@ -1,0 +1,64 @@
+*,
+form,
+span.nb {
+    font-family: 'Inter', sans-serif;
+}
+
+.titre,
+h5.card-title {
+    font-family: 'Just Another Hand', cursive;
+    font-size: 3rem;
+    color: #383737;
+}
+
+h1 {
+    color: #383737;
+}
+
+.greenBorder {
+    background-color: #3EB08D;
+    padding: 5px;
+    color: #ffffff;
+    border-radius: 5px;
+}
+
+input,
+textarea {
+    border: 3px solid #92fdf0;
+}
+
+.btn-gray {
+    background-color: #383737;
+    color: #ffffff;
+}
+
+.btn-gray:hover {
+    background-color: #92fdf0;
+    color: black;
+}
+
+.headColor {
+    background-color: #3EB08D;
+    color: #383737;
+    border-radius: 8px;
+}
+
+.total {
+    font-size: x-large;
+}
+
+tr,
+td,
+th {
+    padding: 20px;
+}
+
+.btn-green {
+    background-color: #3EB08D;
+    color: #ffffff;
+}
+
+.btn-green:hover {
+    background-color: #92fdf0;
+    color: #383737;
+}

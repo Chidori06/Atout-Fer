@@ -1,0 +1,108 @@
+<section id="Prestations">
+    <div class="container mt-5">
+        <h1>Chez Atout Fer, notre vocation : le soin de votre linge </h1>
+        <h2>Nos prestations</h2>
+        <div class="row mt-3 mb-3">
+            <div class="col-sm-12 col-lg-4 d-flex flex-column justify-content-center align-items-center">
+                <img src="assets/img/machine2.svg" alt="Lavage" class="img-fluid">
+                <h2>Nettoyage / Lavage</h2>
+                <a [routerLink]="['prestations']" class="btn btn-green">En savoir plus</a>
+            </div>
+            <div class="d-none d-md-block col-lg-8 d-flex flex-column justify-content-center align-items-center">
+                <h3>Chat nettoie !</h3>
+                <p>Nous vous proposons un large choix de nettoyage et de lavage dans le respect de votre linge
+                    &#40;nettoyage à sec
+                    &#40;classique, écologique&#41;, nettoyage à l'eau, lavage à froid, détachage
+                    même sur les tâches difficiles, désinfection totale &#40;normes Covid&#41;&#41;. Nous utilisons
+                    également un système de dosage et des machines à laver innovants qui nous permettent une grande
+                    réduction de la consommation de
+                    produits lessiviels ainsi qu&#39;une maîtrise
+                    de la consommation d'eau.</p>
+            </div>
+        </div>
+        <div class="row mt-3 mb-3">
+            <div class="d-none d-md-block col-lg-8 d-flex flex-column justify-content-center align-items-center">
+                <h3>Chat repasse ici !</h3>
+                <p>Nous vous proposons un repassage impeccable et adapté aux différents textiles. Garantie avec une
+                    fraîcheur sans égale et sans un pli naturellement. Et si jamais ils vous restent des plis, nous
+                    pouvons aussi vous défroisser un peu.</p>
+            </div>
+            <div class="col-sm-12 col-lg-4 d-flex flex-column justify-content-center align-items-center">
+                <img src="assets/img/fer2.svg" alt="Repassage" class="img-fluid" style="width: 100px;">
+                <h2>Repassage / Défroissage</h2>
+                <a [routerLink]="['prestations']" class="btn btn-green">En savoir plus</a>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12 col-lg-4 d-flex flex-column justify-content-center align-items-center">
+                <img src="assets/img/costume2.svg" alt="Retouches" class="img-fluid">
+                <h2>Retouches / Coutures</h2>
+                <a [routerLink]="['prestations']" class="btn btn-green">En savoir plus</a>
+            </div>
+            <div class="d-none d-md-block col-lg-8 d-flex flex-column justify-content-center align-items-center">
+                <h3>Chat reprise par-là !</h3>
+                <p>Un accrochage, ça arrive. Nous vous proposons un service de couture sur mesure pour redonner une
+                    seconde vie à vos textiles préférés.</p>
+            </div>
+        </div>
+        <div class="row mt-3 mb-3">
+            <div class="d-none d-md-block col-lg-8 d-flex flex-column justify-content-center align-items-center">
+                <h3>Chat prend soin de vos amis à quatre pattes !</h3>
+                <p>Nos amis animaux ont droit aussi à leur service de qualité alors nous vous proposons les mêmes
+                    prestations que pour vous. C'est ça la vie de chat !</p>
+            </div>
+            <div class="col-sm-12 col-lg-4 d-flex flex-column justify-content-center align-items-center">
+                <img src="assets/img/animal.png" alt="Animaux" class="img-fluid" style="max-width: 80px;">
+                <h2>Spécial Animaux</h2>
+                <a [routerLink]="['prestations']" class="btn btn-green">En savoir plus</a>
+            </div>
+        </div>
+    </div>
+</section>
+<section id="Qui">
+    <div class="container mt-5">
+        <h2>Qui sommes-nous ?</h2>
+    </div>
+    <div class="fond-catprofil">
+        <div class="container mt-5">
+            <div class="row">
+                <div class="col-sm-12 col-lg-6 order-lg-last d-flex flex-column">
+                </div>
+                <div class="col-sm-12 col-lg-6 d-flex flex-column justify-content-center">
+                    <p>Chalut ! Nous sommes Bernard et Laetitia, fans de chat et de jeux de mots à base de fer à
+                        repasser.</p>
+                    <p class="txt">Nous sommes passionnés par l'écologie, les animaux et bien sûr votre
+                        bien-être.
+                        Cette
+                        aventure
+                        commence bien entendu par le soin de votre linge. C'est pour cela
+                        que AtoutFer est là pour répondre aux besoins de chacun avec toute l'attention que vous méritez.
+                    </p>
+                    <a [routerLink]="['presentation']" class="btn btn-greelight align-self-center">En savoir plus sur
+                        nous
+                        !</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section id="Contact">
+    <div class="container mt-5">
+        <h2>Contact</h2>
+        <h3>Si chat ne va pas, nous sommes là pour vous répondre.</h3>
+        <p>N'hésitez pas à nous faire des retours positifs comme négatifs, nous faisons tout pour vous satisfaire au
+            mieux et améliorer la qualité de nos prestations.</p>
+    </div>
+    <!--Formulaire de contact-->
+    <app-contact></app-contact>
+</section>
+<section id="Avis">
+    <div class="container mt-5">
+        <h2>Avis</h2>
+        <h3>Regardez chat, les derniers avis sur notre pressing sont là !</h3>
+        <p>Les bons avis comme les mauvais. Tout le monde ne peut pas être satisfait mais nous tentons toujours de mener
+            notre équipe à l'excellence et c'est grâce à vos avis.</p>
+    </div>
+    <!--Partie avis client-->
+    <app-review></app-review>
+</section>

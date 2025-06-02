@@ -1,0 +1,39 @@
+<div class="container mt-5">
+    <h2 class="titre">Nos prestations</h2>
+
+    <div>
+        <div *ngIf="isLoading" class="spinner-border text-secondary" role="status"></div>
+    </div>
+    <section id="Prestations">
+        <div *ngIf="!isLoading">
+            <h4>Chat travaille ici !</h4>
+            <p>Vous voulez connaître nos secrets ? Malheureusement, ils sont précieusement gardés mais nous pouvons
+                seulement vous donner la liste de tous les services que nous pouvons vous accorder. Ainsi vous pourrez
+                faire
+                votre choix
+                en toute tranquillité.</p>
+            <p>N'hésitez pas à prendre contact avec nous pour des demandes spécifiques ou si vous ne
+                trouvez pas
+                votre bonheur dans cette liste.</p>
+            <p>Si votre choix est déjà fait, vous pouvez passer par notre service de dépôt de linge directement.</p>
+
+            <a [routerLink]="['/depot']" class="btn btn-green mt-4 mb-4">Réserver votre dépôt</a>
+
+            <div *ngFor="let service of services">
+                <h3>{{service?.name}}</h3>
+                <div class="row mt-3 mb-3">
+                    <div class="col-sm-12 col-lg-4 d-flex flex-column justify-content-center align-items-center">
+                        <img src="{{imageUrl}}{{service?.image}}" alt="{{service?.name}}" class="img-fluid"
+                            style="max-width:100px;">
+                    </div>
+                    <div
+                        class="d-none d-md-block col-lg-8 d-flex flex-column justify-content-center align-items-center">
+                        <h5>Chat fait quoi ?</h5>
+                        <p>{{service?.description}}</p>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>

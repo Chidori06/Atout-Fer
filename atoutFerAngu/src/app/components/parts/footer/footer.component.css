@@ -1,0 +1,49 @@
+footer {
+    margin-top: 10px;
+    background-color: #383737;
+}
+
+footer span {
+    padding-left: 10px;
+}
+
+footer h6,
+footer span {
+    color: #ffffff;
+    font-family: "Just Another Hand", cursive;
+    font-size: 2em;
+}
+
+footer a,
+footer h7 {
+    font-family: "Inter", sans-serif;
+    font-size: 1em;
+    font-weight: bold;
+    font-size: 0.9rem;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: #3EB08D;
+}
+
+footer .doublecolor {
+    background-color: #3EB08D;
+}
+
+.border-color {
+    border: 3px solid #92fdf0 !important;
+}
+
+.back-color {
+    background-color: #3EB08D !important;
+    color: #ffffff !important;
+}
+
+@media (max-width : 520px) {
+    div.logo {
+        display: flex;
+        justify-content: center;
+    }
+}

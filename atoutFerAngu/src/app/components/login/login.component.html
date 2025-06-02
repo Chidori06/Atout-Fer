@@ -1,0 +1,101 @@
+<div class="container">
+    <h1 class="titre">Se connecter</h1>
+    <div>
+        <div *ngIf="isLoading" class="spinner-border text-secondary" role="status"></div>
+    </div>
+    <div *ngIf="!isLoading">
+        <div class="row d-flex align-items-center justify-content-center h-100">
+            <div class="col-md-8 col-lg-7 col-xl-6">
+                <img src="assets/img/catpresa2.jpg" class="img-fluid" alt="catimg" style="max-height: 500px;">
+            </div>
+            <div class="col-md-7 col-lg-5 col-xl-5 offset-xl-1">
+
+                <form (submit)="loggedUser()" #loginForm="ngForm">
+
+                    <div class="form-outline mb-4">
+                        <!--Email input : message d'erreur si soumis ou touché sans mettre quelque chose-->
+                        <label for="email">Adresse mail</label>
+                        <input type="email" #emailInput="ngModel" [(ngModel)]="user.email" email required
+                            class="form-control form-control-lg" [class.is-valid]=" emailInput.valid"
+                            [class.is-invalid]="!emailInput.valid && emailInput.touched" id="email" name="email">
+
+                        <div *ngIf="!emailInput.valid" class="invalid-feedback">
+                            Veuillez saisir une adresse mail valide
+                        </div>
+                    </div>
+
+                    <div class="form-outline mb-4">
+                        <!--Password input : message d'erreur si soumis ou touché sans mettre quelque chose-->
+                        <label class="form-label">Mot de Passe</label>
+                        <div class="input-group">
+                            <input type="password" name="password" #passwordInput="ngModel" [(ngModel)]="user.password"
+                                [class.is-valid]="passwordInput.valid"
+                                [class.is-invalid]="!passwordInput.valid && passwordInput.touched"
+                                class="form-control form-control-lg" id="password" required
+                                [type]="fieldTextType ? 'text' : 'password'">
+                            <div class="input-group-append input-group-lg">
+                                <span class="input-group-text" (click)="toggleFieldTextType()">
+                                    <fa-icon *ngIf="fieldTextType" [icon]="faEye"></fa-icon>
+                                    <fa-icon *ngIf="!fieldTextType" [icon]="faEyeSlash"></fa-icon>
+                                </span>
+                            </div>
+                        </div>
+                        <div *ngIf="!passwordInput.valid" class="invalid-feedback">
+                            Veuillez saisir un mot de passe
+                        </div>
+                    </div>
+
+                    <div class="d-flex justify-content-around align-items-center mb-4">
+                        <a href="#!">Mot de passe oublié?</a>
+                    </div>
+
+                    <!--Lien vers page d'enregistrement-->
+                    <div class="d-flex justify-content-around align-items-center mb-4">
+                        <p>Vous n'avez pas encore de compte ? <a [routerLink]="['/register']">S'enregistrer</a>
+                        </p>
+                    </div>
+
+                    <div class="text-center text-lg-start mt-4 pt-2">
+                        <div *ngIf="strError" class="text-danger">
+                            {{ strError }}
+                        </div>
+
+                        <button [disabled]="!loginForm.valid" type="submit"
+                            class="btn btn-dark btn-lg btn-block text-center">Se
+                            connecter</button>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--Ancienne méthode-->
+<!--<label class="form-label">Adresse mail</label>
+                        <input type="email" #emailInput="ngModel" [(ngModel)]="user.email"
+                            class="form-control form-control-lg"
+                            [ngClass]="{'is-invalid' : loginForm.submitted && emailInput.invalid || emailInput.touched }"
+                            [ngClass]="{'is-valid' : loginForm.submitted && emailInput.valid || emailInput.valid}"
+                            id="email" name="email" required email />
+                        <div class="invalid-feedback"
+                            *ngIf="loginForm.submitted && emailInput.invalid || emailInput.touched ">
+                            <div *ngIf="emailInput.invalid || emailInput.touched">
+                                Veuillez saisir une adresse mail valide.
+                            </div>
+                        </div>
+                    </div>
+                
+                    <div class="form-outline mb-4">-->
+<!--Password input : message d'erreur si soumis ou touché sans mettre quelque chose-->
+<!-- <label class="form-label">Mot de passe</label>
+                        <input type="password" #passwordInput="ngModel" [(ngModel)]="user.password" class="form-control form-control-lg"
+                            [ngClass]="{'is-invalid' : loginForm.submitted && passwordInput.invalid || passwordInput.touched }"
+                            [ngClass]="{'is-valid' : loginForm.submitted && passwordInput.valid || passwordInput.valid}" name="password"
+                            required />
+                        <div class="invalid-feedback" *ngIf="loginForm.submitted && passwordInput.invalid || passwordInput.touched ">
+                            <div *ngIf="passwordInput.invalid || passwordInput.touched">
+                                Veuillez saisir votre mot de passe.
+                            </div>
+                        </div>
+                    </div>-->

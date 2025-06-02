@@ -1,0 +1,152 @@
+.btnvertc {
+    background-color: #92fdf0;
+    padding: 10px;
+    color: #383737;
+}
+
+.btnvertc:hover {
+    background-color: #3EB08D;
+    color: #ffffff;
+}
+
+section#Prestations {
+    padding-top: 30px;
+    text-align: left;
+}
+
+section#Prestations h1 {
+    font-family: "Just Another Hand", cursive;
+    font-size: 2em;
+    color: #3EB08D;
+    font-size: 4em;
+    text-align: center;
+}
+
+section#Prestations h2 {
+    font-family: "Just Another Hand", cursive;
+    font-size: 2em;
+    font-size: 3em;
+    color: #383737;
+}
+
+section#Prestations h3 {
+    font-family: "Just Another Hand", cursive;
+    font-size: 2em;
+    font-size: 3em;
+    color: #3EB08D;
+}
+
+section#Prestations div.row {
+    border: 3px solid #92fdf0;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+section#Qui h2 {
+    font-family: "Just Another Hand", cursive;
+    font-size: 2em;
+    font-size: 3em;
+}
+
+div.fond-catprofil {
+
+    font-family: "Inter", sans-serif;
+    font-size: 1em;
+    font-weight: bold;
+    font-weight: bold;
+    color: #ffffff;
+    background: linear-gradient(to left, transparent, 40%, rgba(0, 0, 0, 0.6), 50%, rgb(0, 0, 0)), url(/assets/img/catpresa3.jpg);
+    background-position: top right;
+    background-repeat: no-repeat;
+    background-color: black;
+    padding: 20px;
+}
+
+section#Qui .fond-catprofil .btnvertc {
+    background-color: #92fdf0;
+    padding: 10px;
+    color: #383737;
+}
+
+section#Contact h2,
+section#Avis h2 {
+    font-family: "Just Another Hand", cursive;
+    font-size: 3em;
+}
+
+section#Contact h3,
+section#Avis h3 {
+    font-family: "Just Another Hand", cursive;
+    font-size: 3em;
+    color: #3EB08D;
+}
+
+.btn-green {
+    background-color: #3EB08D;
+    color: #ffffff;
+}
+
+.btn-green:hover {
+    background-color: #92fdf0;
+    color: #383737;
+}
+
+.btn-gray {
+    background-color: #383737;
+    color: #ffffff;
+}
+
+.btn-gray:hover {
+    background-color: #92fdf0;
+    color: black;
+}
+
+.btn-greelight {
+    background-color: #92fdf0;
+    color: black;
+}
+
+.btn-greelight:hover {
+    background-color: #3EB08D;
+    color: black;
+}
+
+.btnvertc {
+    background-color: #92fdf0;
+    padding: 10px;
+    color: #383737;
+}
+
+.btnvertc:hover {
+    background-color: #3EB08D;
+    color: #ffffff;
+}
+
+@media (max-width : 520px) {
+
+    div.fond-catprofil {
+        font-family: "Inter", sans-serif;
+        font-size: 1em;
+        font-weight: bold;
+        color: #ffffff;
+        background: linear-gradient(to top, transparent, 40%, rgba(0, 0, 0, 0.6), 50%, rgb(0, 0, 0)), url(/assets/img/catpresa3.jpg);
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-color: black;
+        padding: 20px;
+    }
+
+    p.txt {
+        text-shadow:
+            3px 2px 3px #000;
+    }
+
+    section#Contact h3,
+    section#Avis h3 {
+        font-family: "Just Another Hand", cursive;
+        font-size: 2.5em;
+        color: #3EB08D;
+    }
+
+
+}

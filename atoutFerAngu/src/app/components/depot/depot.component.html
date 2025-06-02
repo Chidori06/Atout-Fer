@@ -1,0 +1,50 @@
+<div class="container mt-5 mb-3">
+    <h2 class="titre">Réserver votre dépôt de linge : </h2>
+    <div>
+        <div *ngIf="isLoading" class="spinner-border text-secondary" role="status"></div>
+    </div>
+    <div *ngIf="!isLoading">
+
+        <div class="row gap-2">
+            <div *ngFor="let categ of categoriesSelect" class="framePicture card" style="width: 18rem;">
+                <div class="card-body">
+                    <h3 class="card-title">{{categ.categories?.name}}</h3>
+                    <h4 class="card-text">{{categ.services?.name}}</h4>
+                    <p class="card-text">{{categ?.price}}€</p>
+
+                    <button (click)="addItemToList(categ)" class="btn btn-gray">Ajouter au dépôt</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="greenBorder mt-3 mb-3">
+            <h3 class="titre">Votre liste de linge : </h3>
+
+            <div *ngIf="list.length === 0">Votre liste est vide.</div>
+            <table class="table table-striped mt-4" *ngIf="list.length > 0">
+                <thead class="headColor">
+                    <th>Quantité</th>
+                    <th>Articles</th>
+                    <th>Prestations</th>
+                    <th>Prix unitaire</th>
+                    <th>Retirer de la liste</th>
+                </thead>
+                <tbody *ngFor="let item of list; let i = index">
+                    <tr>
+                        <td>1</td>
+                        <td> {{ item.categories?.name }}</td>
+                        <td>{{ item.services?.name }}</td>
+                        <td> {{ item.price }}€</td>
+                        <td><button (click)="removeItemFromList(i)" class="btn btn-green">Supprimer</button></td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="total mt-3">
+                <p class="total">Total : {{ getPriceTotal() }}€</p>
+            </div>
+        </div>
+        <div>
+            <button type="button" class="btn btn-green mt-5" (click)="validBasket(list)"
+                [routerLink]="['/panier']">Valider votre panier</button>
+        </div>
+    </div>

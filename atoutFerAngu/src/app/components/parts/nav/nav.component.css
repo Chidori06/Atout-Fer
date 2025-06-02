@@ -1,0 +1,69 @@
+.prenav {
+    background-color: #383737;
+    padding: 5px 0;
+}
+
+.prenav a {
+    font-family: "Inter", sans-serif;
+    font-size: 1em;
+    font-weight: bold;
+    font-size: 0.9rem;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.prenav a:hover {
+    color: #3EB08D;
+}
+
+.prenav p {
+    display: inline-block;
+    font-family: "Inter", sans-serif;
+    font-size: 1em;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+.prenav div a {
+    margin-left: 20px;
+}
+
+nav {
+    font-family: "Inter", sans-serif;
+    font-size: 1em;
+    font-weight: bold;
+    font-weight: bold;
+    background-color: #3EB08D;
+}
+
+nav .navbar-brand {
+    font-family: "Just Another Hand", cursive;
+    font-size: 2em;
+    color: #ffffff;
+}
+
+nav .nav-link {
+    color: #ffffff;
+}
+
+nav ul li {
+    display: inline-block;
+    list-style-type: none;
+}
+
+nav ul li .btnnav {
+    background-color: #92fdf0;
+    padding: 10px 20px;
+    margin-left: 20px;
+}
+
+nav ul li .btnnav:hover {
+    background-color: #383737;
+    padding: 10px 20px;
+    margin-left: 20px;
+    color: #ffffff;
+}
+
+li a:hover {
+    color: #383737;
+}

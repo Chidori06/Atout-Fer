@@ -1,0 +1,79 @@
+<div class="container">
+    <h1 class="titre">Mon compte</h1>
+
+    <h2 class="mb-3">Vos informations personnelles</h2>
+    <div class="backCard d-flex">
+        <fa-icon [icon]="faCat" [size]="'3x'"></fa-icon>
+        <div class="row d-flex flex-row justify-content-center align-items-center">
+            <div class="col-3">
+                <h3>Bienvenue {{user?.firstname}} {{user?.lastname | uppercase}}</h3>
+            </div>
+            <div class="col-3">
+                <h4>Votre adresse :</h4>
+                <p>36 rue des Acacias</p>
+                <p>63000 Clermont-Ferrand</p>
+                <!-- <div *ngIf="user?.addresses">
+                </div> -->
+            </div>
+            <div class="col-3">
+                <h5>Votre adresse mail de contact :</h5>
+                <p>{{user?.email}}</p>
+            </div>
+            <div class="col-3">
+                <h5>Date de naissance :</h5>
+                <p>{{user?.birthdate | date : "dd/LL/yyyy"}}</p>
+            </div>
+        </div>
+    </div>
+    <button class="btn btn-green mt-3 mb-3">Modifier vos informations personnelles</button>
+
+    <h4 class="titre">Récapitulatif de votre dernière commande</h4>
+
+    <p>Commande n° 0001</p>
+
+
+    <table class="table table-striped">
+        <thead class="headColor">
+            <th>Quantité</th>
+            <th>Articles</th>
+            <th>Prestations</th>
+            <th>Prix unitaire</th>
+            <th>Total</th>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>Chemise</td>
+                <td>Lavage</td>
+                <td>14€</td>
+                <td>14€</td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>Robe</td>
+                <td>Lavage</td>
+                <td>14€</td>
+                <td>14€</td>
+            </tr>
+        </tbody>
+        <thead class="headColor mt-2">
+            <th>Date de commande</th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th>Total</th>
+        </thead>
+        <tbody>
+            <tr>
+                <td>06/11/2023</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td class="total">38€</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <button class="btn btn-green mt-3 mb-3">Voir toutes vos commandes</button>
+
+</div>

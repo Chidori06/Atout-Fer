@@ -1,0 +1,30 @@
+*,
+form,
+span.nb {
+    font-family: 'Inter', sans-serif;
+}
+
+.titre,
+h5.card-title {
+    font-family: 'Just Another Hand', cursive;
+    font-size: 3rem;
+    color: #383737;
+}
+
+h1 {
+    color: #383737;
+}
+
+div.fond-catprofil {
+
+    font-family: "Inter", sans-serif;
+    font-size: 1em;
+    font-weight: bold;
+    font-weight: bold;
+    color: #ffffff;
+    background: linear-gradient(to left, transparent, 40%, rgba(0, 0, 0, 0.6), 50%, rgb(0, 0, 0)), url(/assets/img/catpresa3.jpg);
+    background-position: top right;
+    background-repeat: no-repeat;
+    background-color: black;
+    padding: 20px;
+}

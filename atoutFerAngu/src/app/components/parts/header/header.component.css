@@ -1,0 +1,78 @@
+div.fond-cataccueil {
+    font-family: "Inter", sans-serif;
+    font-size: 1em;
+    font-weight: bold;
+    font-weight: bold;
+    color: #ffffff;
+    background: linear-gradient(to right, transparent, 40%, rgba(0, 0, 0, 0.6), 50%, rgb(0, 0, 0)), url(/assets/img/cataccueil9.jpg);
+    background-position: top left;
+    background-repeat: no-repeat;
+    background-color: black;
+}
+
+.fond-cataccueil .btnvertc {
+    background-color: #92fdf0;
+    padding: 10px;
+    color: #383737;
+}
+
+.fond-cataccueil .bg-vert {
+    background-color: #3EB08D;
+    border-radius: 5px;
+    padding: 10px 30px;
+}
+
+.fond-cataccueil .bg-vert .col-md-6:first-child {
+    border-right: 1px solid #ffffff;
+}
+
+.fond-cataccueil .bg-vert p {
+    margin: 0;
+    margin-left: 20px;
+}
+
+.fond-cataccueil .infos {
+    padding: 10px 20px;
+    position: relative;
+    bottom: -42px;
+}
+
+.fond-cataccueil .btnvertc {
+    background-color: #92fdf0;
+    padding: 10px;
+    color: #383737;
+}
+
+.fond-cataccueil .btnvertc:hover {
+    background-color: #3EB08D;
+    color: #ffffff;
+}
+
+@media (max-width: 520px) {
+    div.fond-cataccueil {
+        font-family: "Inter", sans-serif;
+        font-size: 1em;
+        font-weight: bold;
+        font-weight: bold;
+        color: #ffffff;
+        background: linear-gradient(to top, transparent, 40%, rgba(0, 0, 0, 0.6), 50%, rgb(0, 0, 0)), url(/assets/img/cataccueil9.jpg);
+        background-position: bottom center;
+        background-repeat: no-repeat;
+        background-color: black;
+    }
+
+    .fond-cataccueil .bg-vert .col-md-6:first-child {
+        border-right: 1px solid #3EB08D;
+        padding: 5px;
+    }
+
+    /*.fond-cataccueil .bg-vert .col-sm-12:first-child {
+        border-bottom: 1px solid #ffffff;
+    }*/
+
+    .fond-cataccueil .infos {
+        padding: 10px 20px;
+        position: relative;
+        bottom: -90px;
+    }
+}

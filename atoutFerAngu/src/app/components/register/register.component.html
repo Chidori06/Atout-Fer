@@ -1,0 +1,83 @@
+<div class="container">
+    <h1 class="titre">S'enregistrer</h1>
+    <div>
+        <div *ngIf="isLoading" class="spinner-border text-secondary" role="status"></div>
+    </div>
+    <div *ngIf="!isLoading">
+        <form (submit)="addUser()" #registerForm="ngForm">
+
+            <div class="form-outline mb-4">
+                <label class="form-label">Nom</label>
+                <input type="text" class="form-control form-control-lg" #lastnameInput="ngModel"
+                    [(ngModel)]="user.lastname" [class.is-valid]=" lastnameInput.valid"
+                    [class.is-invalid]="!lastnameInput.valid && lastnameInput.touched" name="lastname" required>
+                <div *ngIf="!lastnameInput.valid" class="invalid-feedback">
+                    Veuillez saisir un nom
+                </div>
+            </div>
+
+            <div class="form-outline mb-4">
+                <label class="form-label">Prénom</label>
+                <input type="text" class="form-control form-control-lg" #firstnameInput="ngModel"
+                    [(ngModel)]="user.firstname" [class.is-valid]=" firstnameInput.valid"
+                    [class.is-invalid]="!firstnameInput.valid && firstnameInput.touched" name="firstname" required>
+                <div *ngIf="!firstnameInput.valid" class="invalid-feedback">
+                    Veuillez saisir un prénom
+                </div>
+            </div>
+
+            <div class="form-outline mb-4">
+                <label for="email">Adresse mail</label>
+                <input type="email" #emailInput="ngModel" [(ngModel)]="user.email" email required
+                    class="form-control form-control-lg" [class.is-valid]=" emailInput.valid"
+                    [class.is-invalid]="!emailInput.valid && emailInput.touched" id="email" name="email">
+
+                <div *ngIf="!emailInput.valid" class="invalid-feedback">
+                    Veuillez saisir une adresse mail valide
+                </div>
+            </div>
+
+            <div class="form-outline mb-4">
+                <label class="form-label">Genre</label>
+                <select class="form-select" name="genre" #genreInput="ngModel" [(ngModel)]="user.gender">
+                    <option value="null">Veuillez sélectionner une option</option>
+                    <option *ngFor="let genre of genres" value="{{genre}}">{{genre}}</option>
+                </select>
+                <div *ngIf="!genreInput.valid" class="invalid-feedback">
+                    Veuillez choisir votre option
+                </div>
+            </div>
+
+            <div class="form-outline mb-4">
+                <label class="form-label">Date de naissance</label>
+                <input type="date" class="form-control form-control-lg" name="birthdate" [(ngModel)]="user.birthdate"
+                    #birthdateInput="ngModel" />
+            </div>
+            <div *ngIf="!birthdateInput.valid" class="invalid-feedback">
+                Veuillez saisir une date de naissance
+            </div>
+
+            <div class="form-outline mb-4">
+                <label class="form-label">Mot de Passe</label>
+                <div class="input-group">
+                    <input type="password" name="password" #passwordInput="ngModel" [(ngModel)]="user.password"
+                        [class.is-valid]="passwordInput.valid"
+                        [class.is-invalid]="!passwordInput.valid && passwordInput.touched"
+                        class="form-control form-control-lg" id="password" required
+                        [type]="fieldTextType ? 'text' : 'password'">
+                    <div class="input-group-append input-group-lg">
+                        <span class="input-group-text" (click)="toggleFieldTextType()">
+                            <fa-icon *ngIf="fieldTextType" [icon]="faEye"></fa-icon>
+                            <fa-icon *ngIf="!fieldTextType" [icon]="faEyeSlash"></fa-icon>
+                        </span>
+                    </div>
+                </div>
+                <div *ngIf="!passwordInput.valid" class="invalid-feedback">
+                    Veuillez saisir un mot de passe
+                </div>
+            </div>
+
+            <button type="submit" class="btn btn-dark btn-lg btn-block text-center">S'enregistrer</button>
+        </form>
+    </div>
+</div>

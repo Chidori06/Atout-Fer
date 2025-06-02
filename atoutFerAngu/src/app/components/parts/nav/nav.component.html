@@ -1,0 +1,73 @@
+<div class="prenav d-none d-md-flex d-flex align-items-center justify-content-evenly">
+    <a href="tel:04735595">
+        <fa-icon [icon]="faPhone" class="fa-flip-horizontal" style="color: #ffffff;"></fa-icon>
+        +33 4 73 55 95</a>
+    <a href="mailto:contact-atoutfer@atoutfer.fr">
+        <fa-icon [icon]="faEnvelope" style="color: #ffffff;"></fa-icon>
+        contact-atoutfer&#64;atoutfer.fr</a>
+    <a href="#">
+        <fa-icon [icon]="faHouse" style="color: #ffffff;"></fa-icon>
+        24 avenue du Fer - 63000 Clermont-Ferrand</a>
+    <div>
+        <a href="#">
+            <fa-icon [icon]="faFb" size="1x" style="color: #ffffff;"></fa-icon>
+        </a>
+        <a href="#">
+            <fa-icon [icon]="faInsta" size="1x" style="color: #ffffff;"></fa-icon>
+        </a>
+        <a href="#">
+            <fa-icon [icon]="faTwitter" size="1x" style="color: #ffffff;"></fa-icon>
+        </a>
+    </div>
+</div>
+<nav class="navbar navbar-expand-lg">
+    <div class="container">
+        <a class="navbar-brand titre" [routerLink]="['']"><img src="assets/img/logo-blanc.svg"
+                style="max-width:100px; max-height:200px">Atout Fer !</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse align-items-center justify-content-around" id="navbarNav">
+            <ul class="navbar-nav">
+
+                <li class="nav-item">
+                    <a class="nav-link" aria-current="page" [routerLink]="['']">Accueil</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" aria-current="page" [routerLink]="['prestations']">Nos prestations</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" aria-current="page" [routerLink]="['presentation']">Qui sommes-nous</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" aria-current="page" [routerLink]="['depot']">Dépôt de linge</a>
+                </li>
+
+                <!--Seulement si l'utilisateur est connecté-->
+
+                <!--Avis Clients à prévoir par la suite-->
+                <!-- <li *ngIf="loggedIn()" class="nav-item">
+                    <a class="nav-link" aria-current="page" href="#">Avis Clients</a>
+                </li>-->
+                <li *ngIf="loggedIn()" class="nav-item">
+                    <a class="nav-link" (click)="logout()" href="#">Se déconnecter</a>
+                </li>
+            </ul>
+            <ul class="logo-nav">
+                <!--Change la valeur du bouton si l'utilisateur est connecté-->
+                <li *ngIf="!loggedIn()"> <fa-icon class="btn btnnav" [icon]="faUser" [routerLink]="['login']"></fa-icon>
+                </li>
+                <li *ngIf="loggedIn()"> <fa-icon class="btn btnnav" [icon]="faUser" [routerLink]="['compte']"></fa-icon>
+                </li>
+                <li><fa-icon class="btn btnnav" [icon]="faBasket" [routerLink]="['panier']">
+                    </fa-icon>
+                    <!--Ajout d'un badge pour notifier la présence d'éléments dans le panier-->
+                    <span *ngIf="basketNotify()"
+                        class="position-absolute translate-middle badge rounded-pill bg-dark">{{items.length}}
+                    </span>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>

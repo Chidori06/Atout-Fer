@@ -1,0 +1,29 @@
+.greenBorder {
+    background-color: #3EB08D;
+    padding: 5px;
+    color: #ffffff;
+    border-radius: 5px;
+}
+
+input,
+textarea {
+    border: 3px solid #92fdf0;
+}
+
+.btn-gray {
+    background-color: #383737;
+    color: #ffffff;
+}
+
+.btn-gray:hover {
+    background-color: #92fdf0;
+    color: black;
+}
+
+@media (max-width: 520px) {
+    iframe {
+        align-items: center;
+        max-width: 300px;
+        max-height: 300px;
+    }
+}

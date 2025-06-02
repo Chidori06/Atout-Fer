@@ -1,0 +1,26 @@
+h5.card-title {
+    font-family: 'Just Another Hand', cursive;
+    font-size: 3rem;
+    color: #383737;
+}
+
+.framePicture {
+    background-color: #3EB08D;
+    border: 2px solid #92fdf0;
+
+}
+
+.frameText {
+    background-color: #ffffff;
+    border: 2px solid #92fdf0;
+    padding: 10px;
+
+}
+
+svg {
+    border: 2px solid #92fdf0 !important;
+}
+
+h6 {
+    font-size: large;
+}

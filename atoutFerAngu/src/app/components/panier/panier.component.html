@@ -1,0 +1,33 @@
+<div class="container mt-5">
+    <h2 class="titre">Votre panier </h2>
+    <div class="container">
+
+        <h3>Récapitulatif de votre panier :</h3>
+
+        <div *ngIf="items.length === 0">Votre panier est vide.</div>
+        <table class="table table-striped mt-4" *ngIf="items.length > 0">
+            <thead class="headColor">
+                <th>Quantité</th>
+                <th>Articles</th>
+                <th>Prestations</th>
+                <th>Prix unitaire</th>
+                <th>Retirer du panier</th>
+            </thead>
+            <tbody *ngFor="let item of items; let i = index">
+                <tr>
+                    <td>1</td>
+                    <td> {{ item.categories?.name }}</td>
+                    <td>{{ item.services?.name }}</td>
+                    <td> {{ item.price }}€</td>
+                    <td><button (click)="removeItemFromList(i)" class="btn btn-green">Supprimer</button></td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="d-flex justify-content-end">
+            <p class="total">Total de la commande :&nbsp;</p>
+            <p class="total"> {{ getPriceTotal() }}€</p>
+        </div>
+    </div>
+    <div class="d-flex justify-content-end">
+        <button type="button" class="btn btn-green mt-5" (click)="sendCommand()">Passer au paiement</button>
+    </div>

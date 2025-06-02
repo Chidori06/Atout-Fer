@@ -1,0 +1,55 @@
+*,
+form,
+span.nb {
+    font-family: 'Inter', sans-serif;
+}
+
+.titre,
+h5.card-title {
+    font-family: 'Just Another Hand', cursive;
+    font-size: 3rem;
+    color: #383737;
+}
+
+h1,
+h2 {
+    color: #383737;
+}
+
+h2 {
+    font-size: large;
+}
+
+.backCard {
+    background-color: #3EB08D;
+    border: 2px solid #92fdf0;
+    padding: 5px;
+    color: #ffffff;
+    border-radius: 5px;
+}
+
+.btn-green {
+    background-color: #3EB08D;
+    color: #ffffff;
+}
+
+.btn-green:hover {
+    background-color: #92fdf0;
+    color: #383737;
+}
+
+.headColor {
+    background-color: #3EB08D;
+    color: #383737;
+    border-radius: 8px;
+}
+
+.total {
+    font-size: x-large;
+}
+
+tr,
+td,
+th {
+    padding: 20px;
+}
