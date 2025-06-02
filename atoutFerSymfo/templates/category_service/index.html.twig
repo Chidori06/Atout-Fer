@@ -1,0 +1,62 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Atout Fer! - Catégories/Services
+{% endblock %}
+
+{% block stylesheets %}
+	<link href="{{ asset('assets/libs/datatables/css/datatables.css') }}" rel="stylesheet">
+	<link href="{{ asset('assets/libs/datatables/css/datatables-bootstrap5.min.css') }}" rel="stylesheet">
+{% endblock %}
+
+{% block body %}
+	<div class="container">
+		<h1 class="titre">Les catégories/services :</h1>
+		<a class="btn btn-green mb-4" href="{{path('app_category_service_add')}}">Ajouter une catégorie/service</a>
+
+		{# Si jamais il n'y a pas de catégories/Services, on affiche le texte, sinon le datatable #}
+		{% if categoriesServices|length == 0 %}
+			<div class="text-center text-dark">Aucune catégorie et service lié disponible</div>
+		{% else %}
+			<table id="tableau" class="table table-striped" style="width:100%">
+				<thead>
+					<tr>
+						<th>#</th>
+						<th>Catégories</th>
+						<th>Services</th>
+						<th>Prix</th>
+						<th>Actions</th>
+					</tr>
+				</thead>
+				<tbody>
+					{# On va chercher les éléments de CategoryService #}
+					{% for categoryServ in categoriesServices %}
+						<tr>
+
+							<td>{{categoryServ.id}}</td>
+							<td>{{ categoryServ.categories.name }}</td>
+							<td>{{ categoryServ.services.name }}</td>
+							<td>{{ categoryServ.price }}€</td>
+							<td>
+								<a href="{{ path('app_category_service_edit', {'id': categoryServ.id}) }}">Editer</a>
+								<a href="{{ path('app_category_service_delete', {'id': categoryServ.id}) }}">Supprimer</a>
+							</td>
+						</tr>
+					</tr>
+				{% endfor %}
+			</tbody>
+			<tfoot>
+				<tr>
+					<th>#</th>
+					<th>Catégories</th>
+					<th>Services</th>
+					<th>Prix</th>
+					<th>Actions</th>
+				</tr>
+			</tfoot>
+		</table>
+	{% endif %}
+</div>{% endblock %}{% block javascripts %}
+<script src="{{ asset('assets/libs/datatables/js/jquery.js')}}"></script>
+<script src="{{ asset('assets/libs/datatables/js/datatables-bootstrap5.min.js')}}"></script>
+<script src="{{ asset('assets/libs/datatables/js/jquery-datatables.js')}}"></script>
+<script src="{{ asset('assets/libs/js/category/init-dt.js')}}"></script>{% endblock %}

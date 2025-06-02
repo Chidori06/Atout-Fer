@@ -1,0 +1,107 @@
+{% extends 'base.html.twig'%}
+{% block title %}Atout Fer !
+{% endblock %}
+
+{% block body %}
+
+	<div class="container">
+		{% if app.user %}
+			<h1 class="titre">Bienvenue
+				{{ app.user.firstname }}
+				{{ app.user.lastname|upper }}
+			</h1>
+			<h2 class="titre">Tableau de bord :</h2>
+			{% if "ROLE_ADMIN" in app.user.roles %}
+
+				<div class="row justify-content-center text-center">
+					<div class="col-md-8 d-flex flex-row">
+						<div class="card border border-color m-3" style="width: 18rem;">
+							<div class="card-body">
+								<div class="card-top-img">
+									<i class="fa-regular fa-rectangle-list fa-2xl" style="color: #20978b;"></i>
+								</div>
+								<h5 class="card-title title">
+									Catégories</h5>
+								<a href="{{ path('app_category') }}" class="btn btn-green">Accéder</a>
+							</div>
+						</div>
+						<div class="card border border-color m-3" style="width: 18rem;">
+							<div class="card-body">
+								<div class="card-top-img">
+									<i class="fa-regular fa-rectangle-list fa-2xl" style="color: #20978b;"></i>
+								</div>
+								<h5 class="card-title title">Services</h5>
+								<a href="{{ path('app_service') }}" class="btn btn-green text-center">Accéder</a>
+							</div>
+						</div>
+						<div class="card border border-color m-3" style="width: 18rem;">
+							<div class="card-body">
+								<div class="card-top-img">
+									<i class="fa-regular fa-rectangle-list fa-2xl" style="color: #20978b;"></i>
+								</div>
+								<h5 class="card-title title">Catégories/Services</h5>
+								<a href="{{ path('app_category_service') }}" class="btn btn-green text-center">Accéder</a>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-8 d-flex flex-row">
+						<div class="card border border-color m-3" style="width: 18rem;">
+							<div class="card-body">
+								<div class="card-top-img">
+									<i class="fa-regular fa-rectangle-list fa-2xl" style="color: #20978b;"></i>
+								</div>
+								<h5 class="card-title title">Enregistrer un employé</h5>
+								<a href="{{ path('app_user') }}" class="btn btn-green">Enregistrer</a>
+							</div>
+						</div>
+						<div class="card border border-color m-3" style="width: 18rem;">
+							<div class="card-body">
+								<div class="card-top-img">
+									<i class="fa-regular fa-rectangle-list fa-2xl" style="color: #20978b;"></i>
+								</div>
+								<h5 class="card-title title">Gestion des commandes</h5>
+								<a href="{{ path('app_order') }}" class="btn btn-green">Accéder</a>
+							</div>
+						</div>
+						<div class="card border border-color m-3" style="width: 18rem;">
+							<div class="card-body">
+								<div class="card-top-img">
+									<i class="fa-regular fa-rectangle-list fa-2xl" style="color: #20978b;"></i>
+								</div>
+								<h5 class="card-title title">Avis clients</h5>
+								<a href="{{ path('app_review') }}" class="btn btn-green">Accéder</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			{% elseif "ROLE_EMPLOYEE" in app.user.roles %}
+				<div class="row justify-content-center text-center">
+
+					<div class="col-md-6 d-flex flex-row">
+						<div class="card border border-color m-3" style="width: 18rem;">
+							<div class="card-body">
+								<div class="card-top-img">
+									<i class="fa-regular fa-rectangle-list fa-2xl" style="color: #20978b;"></i>
+								</div>
+								<h5 class="card-title title">Catégories/Services</h5>
+								<a href="{{ path('app_category_service') }}" class="btn btn-green text-center">Accéder</a>
+							</div>
+						</div>
+						<div class="card border border-color m-3" style="width: 18rem;">
+							<div class="card-body">
+								<div class="card-top-img">
+									<i class="fa-regular fa-rectangle-list fa-2xl" style="color: #20978b;"></i>
+								</div>
+								<h5 class="card-title title">Gestion des commandes</h5>
+								<a href="{{ path('app_order') }}" class="btn btn-green">Accéder</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			{% endif %}
+		{% else %}
+			<h2 class="text-danger">Désolé, si vous n'êtes pas administrateur vous n'avez pas à être ici.</h2>
+			<a href="{{ path('app_login') }}">Retour à la page de connexion</a>
+		{% endif %}
+	</div>
+{% endblock %}

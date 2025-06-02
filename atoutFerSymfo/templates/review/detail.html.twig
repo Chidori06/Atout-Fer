@@ -1,0 +1,19 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Atout Fer! - Avis
+{% endblock %}
+
+{% block body %}
+	<div class="container">
+		<h1 class="titre">Détail de l'avis :</h1>
+
+		<div class="card border-color back-color" style="width: 18rem;">
+			<h5 class="card-title text-center">{{review.rating}}</h5>
+			<div class="text-center">
+				<p class="card-text">{{ review.content }}</p>
+				<a class="btn btn-gray mb-4" href="{{ path('app_review') }}">Retour sur la liste</a>
+			</div>
+
+		</div>
+	</div>
+{% endblock %}

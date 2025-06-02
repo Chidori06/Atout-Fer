@@ -1,0 +1,51 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}AtoutFer! - Enregistrer un employé
+
+{% endblock %}
+
+{% block body %}
+	<div class="container">
+
+		<h1 class="titre">Créez un nouveau compte</h1>
+
+		<a class="btn btn-green mb-4" href="{{path('app_default')}}">Retour sur la liste</a>
+
+
+		{{ form_start(registrationForm) }}
+
+
+		<div class="form-outline mb-4">
+			{{ form_row(registrationForm.firstname) }}
+		</div>
+
+		<div class="form-outline mb-4">
+			{{ form_row(registrationForm.lastname) }}
+		</div>
+
+		<div class="form-outline mb-4">
+			{{ form_row(registrationForm.email) }}
+		</div>
+
+		<div class="form-outline mb-4">
+			{{ form_row(registrationForm.birthdate) }}
+		</div>
+
+		<div class="form-outline mb-4">
+			{{ form_row(registrationForm.gender) }}
+		</div>
+
+		<div class="form-outline mb-4">
+			{{ form_row(registrationForm.roles) }}
+		</div>
+
+		<div class="form-outline mb-4">
+			{{ form_row(registrationForm.plainPassword) }}
+		</div>
+
+
+		{{ form_end(registrationForm) }}
+	</div>
+
+
+{% endblock %}

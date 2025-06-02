@@ -1,0 +1,68 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Atout Fer! - Commandes
+{% endblock %}
+
+{% block stylesheets %}
+	<link href="{{ asset('assets/libs/datatables/css/datatables.css') }}" rel="stylesheet">
+	<link href="{{ asset('assets/libs/datatables/css/datatables-bootstrap5.min.css') }}" rel="stylesheet">
+{% endblock %}
+
+{% block body %}
+	<div class="container">
+		<h1 class="titre">Gestion de commandes :</h1>
+		<a class="btn btn-green mb-4" href="{{path('app_default')}}">Retour</a>
+
+		{% if orders|length == 0 %}
+			<div class="text-center text-dark">Aucune commande disponible</div>
+		{% else %}
+			<table id="tableau" class="table table-striped" style="width:100%">
+				<thead>
+					<tr>
+						<th>#</th>
+						<th>Utilisateurs</th>
+						<th>Date de commande</th>
+						<th>Total commande</th>
+						<th>Statut</th>
+						<th>Paiement</th>
+						<th>Actions</th>
+					</tr>
+				</thead>
+				<tbody>
+					{% for order in orders %}
+						<td>{{order.id}}</td>
+						<td>{{ order.user.lastname|upper }}
+							{{ order.user.firstname }}</td>
+						<td>{{order.orderDate|date('d-m-Y')}}</td>
+						<td>{{ order.total }}€</td>
+						<td>{{ order.statusOrder.name }}</td>
+						<td>{{ order.payment }}</td>
+						<td>
+							<a href="{{ path('app_order_detail', {'id': order.id}) }}">Détail</a>
+							<a href="{{ path('app_order_edit', {'id': order.id}) }}">Editer</a>
+							<a href="{{ path('app_order_delete', {'id': order.id}) }}">Supprimer</a>
+						</td>
+
+					</tbody>
+				{% endfor %}
+				<tfoot>
+					<tr>
+						<th>#</th>
+						<th>Utilisateurs</th>
+						<th>Date de commande</th>
+						<th>Total commande</th>
+						<th>Statut</th>
+						<th>Paiement</th>
+						<th>Actions</th>
+					</tr>
+				</tfoot>
+			</table>
+		{% endif %}
+	</div>
+{% endblock %}
+{% block javascripts %}
+	<script src="{{ asset('assets/libs/datatables/js/jquery.js')}}"></script>
+	<script src="{{ asset('assets/libs/datatables/js/datatables-bootstrap5.min.js')}}"></script>
+	<script src="{{ asset('assets/libs/datatables/js/jquery-datatables.js')}}"></script>
+	<script src="{{ asset('assets/libs/js/category/init-dt.js')}}"></script>
+{% endblock %}

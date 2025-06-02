@@ -1,0 +1,188 @@
+*,
+form,
+span.nb {
+    font-family: 'Inter', sans-serif;
+}
+
+.titre,
+h5.card-title {
+    font-family: 'Just Another Hand', cursive;
+    font-size: 3rem;
+    color: #383737;
+}
+
+.prenav {
+    background-color: #383737;
+    padding: 5px 0;
+}
+
+.prenav a {
+    font-family: "Inter", sans-serif;
+    font-size: 1em;
+    font-weight: bold;
+    font-size: 0.9rem;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.prenav a:hover {
+    color: #3EB08D;
+}
+
+.prenav p {
+    display: inline-block;
+    font-family: "Inter", sans-serif;
+    font-size: 1em;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+.prenav div a {
+    margin-left: 20px;
+}
+
+nav {
+    font-family: "Inter", sans-serif;
+    font-size: 1em;
+    font-weight: bold;
+    font-weight: bold;
+    background-color: #3EB08D;
+}
+
+nav .navbar-brand {
+    font-family: "Just Another Hand", cursive;
+    font-size: 2em;
+    color: #ffffff;
+}
+
+nav .nav-link {
+    color: #ffffff;
+}
+
+h1 {
+    color: black;
+}
+
+div.fond-cataccueil {
+    font-family: "Inter", sans-serif;
+    font-size: 1em;
+    font-weight: bold;
+    font-weight: bold;
+    color: #ffffff;
+    background: linear-gradient(to right, transparent, 40%, rgba(0, 0, 0, 0.6), 50%, rgb(0, 0, 0)), url(/img/cataccueil9.jpg);
+    background-position: top left;
+    background-repeat: no-repeat;
+    background-color: black;
+}
+
+.fond-cataccueil .btnvertc {
+    background-color: #92fdf0;
+    padding: 10px;
+    color: #383737;
+}
+
+.fond-cataccueil .bg-vert {
+    background-color: #3EB08D;
+    border-radius: 5px;
+    padding: 10px 30px;
+}
+
+.fond-cataccueil .bg-vert .col-6:first-child {
+    border-right: 1px solid #ffffff;
+}
+
+.fond-cataccueil .bg-vert p {
+    margin: 0;
+    margin-left: 20px;
+}
+
+.fond-cataccueil .infos {
+    padding: 10px 20px;
+    position: relative;
+    bottom: -42px;
+}
+
+.btn-green {
+    background-color: #3EB08D;
+    color: #ffffff;
+}
+
+.btn-green:hover {
+    background-color: #92fdf0;
+}
+
+.btn-gray {
+    background-color: #383737;
+    color: #ffffff;
+}
+
+.btn-gray:hover {
+    background-color: #92fdf0;
+    color: black;
+}
+
+.btn-greelight {
+    background-color: #92fdf0;
+    color: black;
+}
+
+.btn-greelight:hover {
+    background-color: #3EB08D;
+    color: black;
+}
+
+td a {
+    color: #3EB08D;
+}
+
+td a:hover {
+    color: #92fdf0;
+}
+
+footer {
+    margin-top: 10px;
+    background-color: #383737;
+}
+
+footer span {
+    padding-left: 10px;
+}
+
+footer h6,
+footer span {
+    color: #ffffff;
+    font-family: "Just Another Hand", cursive;
+    font-size: 2em;
+}
+
+footer a,
+footer h7 {
+    font-family: "Inter", sans-serif;
+    font-size: 1em;
+    font-weight: bold;
+    font-size: 0.9rem;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: #3EB08D;
+}
+
+footer .doublecolor {
+    background-color: #3EB08D;
+}
+
+.border-color {
+    border: 3px solid #92fdf0 !important;
+}
+
+.back-color {
+    background-color: #3EB08D !important;
+    color: #ffffff !important;
+}
+
+.form-check-input:checked {
+    background-color: #3EB08D !important;
+    color: #3EB08D !important;
+}

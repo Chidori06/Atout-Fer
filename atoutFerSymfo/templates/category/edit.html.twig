@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Atout Fer! - Editer la catégorie
+{% endblock %}
+
+{% block body %}
+	<div class="container">
+		<h1 class="titre">Editer la catégorie
+			{{ category.name }}
+			:</h1>
+		<a class="btn btn-green mb-4" href="{{ path('app_category') }}">Retour sur la liste</a>
+		<div
+			class="container">
+
+			{# On appelle le formulaire CategoryFormType #}
+
+			{{ form(form) }}
+
+			</div>
+		</div>
+	{% endblock %}

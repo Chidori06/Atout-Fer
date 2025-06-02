@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Atout Fer! - Avis
+{% endblock %}
+
+{% block body %}
+	<div class="container">
+		<h1 class="titre">Gestion des avis :</h1>
+		<a class="btn btn-green mb-4" href="{{path('app_default')}}">Retour</a>
+		{% if reviews|length == 0 %}
+			<div class="text-center text-dark">Aucun avis disponible</div>
+		{% else %}
+			<div class="row">
+				{% for review in reviews %}
+					<div class="card border-color back-color" style="width: 18rem;">
+						<h5 class="card-title text-center">{{review.rating}}/10</h5>
+						<h4 class="text-center">{{ review.user.lastname|upper}}
+							{{ review.user.firstname}}</h4>
+
+						<div class="text-center">
+							<p class="card-text">{{ review.content }}</p>
+							<a class="btn btn-gray mb-4" href="{{ path('app_review_detail', {'id': review.id}) }}">Voir le détail</a>
+						</div>
+					</div>
+				{% endfor %}
+			</div>
+		{% endif %}
+	</div>
+{% endblock %}

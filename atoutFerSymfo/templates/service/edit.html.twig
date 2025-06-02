@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Atout Fer! - Editer le service
+{% endblock %}
+
+{% block body %}
+	<div class="container">
+		<h1 class="titre">Editer le service
+			{{ service.name }}
+			:</h1>
+		<a class="btn btn-green mb-4" href="{{ path('app_service') }}">Retour sur la liste</a>
+		<div class="container">
+
+			{{ form(form) }}
+
+			</div>
+		</div>
+	{% endblock %}

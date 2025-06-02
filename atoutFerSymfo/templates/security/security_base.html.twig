@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<head>
+
+	<title>
+		{% block title %}Atout Fer !
+		{% endblock %}
+	</title>
+
+	{% include 'parts/style.html.twig' %}
+</head>
+
+<body>
+	{% block body %}
+		<section style="background-color: #3EB08D;">
+			<div class="container py-5">
+				<div class="row d-flex justify-content-center align-items-center">
+					<div class="col col-xl-10">
+						<div class="card" style="border-radius: 1rem;">
+							<div class="row g-0">
+								<div class="col-md-6 col-lg-5 d-none d-md-block">
+									<img src="{{ asset('img/cattaclysme2.jpg')}}" alt="image de chats" class="img-fluid" style="border-radius: 1rem 0 0 1rem;"/>
+								</div>
+								<div class="col-md-6 col-lg-7 d-flex align-items-center">
+									<div class="card-body p-4 p-lg-5 text-black">
+										{% block form %}{% endblock %}
+
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+	{% endblock %}
+	{% include 'parts/script.html.twig' %}
+
+</body></html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<head>
+
+	<title>
+		{% block title %}Atout Fer!
+		{% endblock %}
+	</title>
+
+	{% include 'parts/style.html.twig' %}
+	{% block stylesheets %}{% endblock %}
+</head>
+
+<body>
+	{% include 'parts/nav.html.twig' %}
+	<div
+		class="fond-cataccueil mb-5">
+		<!--Image à positionner et à revoir-->
+		<div class="container">
+			<div class="row gradient">
+				<div class="offset-md-12 offset-lg-6 col-sm-12 col-lg-6 d-flex flex-column align-items-center mt-5">
+					<p>Bienvenue dans l'arrière boutique de votre pressing !</p>
+					<p>Marre du linge qui s'entasse inlassablement chez vous ?</p>
+					<p>Ras le hublot de ces tâches qui ne partent plus sur votre vêtement préféré ?</p>
+					<p>N'attendez plus, Atout Fer s'occupe de tout !</p>
+				</div>
+			</div>
+		</div>
+		<div class="container infos">
+			<div class="row">
+				<div class="offset-md-2 col-8 bg-vert">
+					<div class="row">
+						<div class="col-6 d-flex  align-items-center">
+							<i class="fa-solid fa-door-open fs-1" style="color: #ffffff;"></i>
+							<p>Horaires d'ouverture :
+								<br>
+								Lundi au vendredi : 8h-12h / 15h-19h
+								<br>
+								Samedi : 9h30-13h</p>
+						</div>
+						<div class="col-6 d-flex align-items-center">
+							<i class="fa-solid fa-thumbs-up fs-1 ms-2" style="color: #ffffff;"></i>
+							<p>La qualité à votre service
+								<br>
+								Satisfait ou remboursé * !</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	{% block body %}{% endblock %}
+	{% include 'parts/footer.html.twig' %}
+	{% block javascripts %}{% endblock %}
+
+	{% include 'parts/script.html.twig' %}
+</body></html>

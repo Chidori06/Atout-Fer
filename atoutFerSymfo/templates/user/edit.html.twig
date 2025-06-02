@@ -1,0 +1,48 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Atout Fer! - Editer une fiche utilisateur
+{% endblock %}
+
+{% block body %}
+	<div class="container">
+
+		<h1 class="titre">Editer une fiche utilisateur</h1>
+		<a class="btn btn-green mb-4" href="{{ path('app_user') }}">Retour sur la liste</a>
+
+		{{ form_start(form) }}
+
+
+		<div class="form-outline mb-4">
+			{{ form_row(form.firstname) }}
+		</div>
+
+		<div class="form-outline mb-4">
+			{{ form_row(form.lastname) }}
+		</div>
+
+		<div class="form-outline mb-4">
+			{{ form_row(form.email) }}
+		</div>
+
+		<div class="form-outline mb-4">
+			{{ form_row(form.birthdate) }}
+		</div>
+
+		<div class="form-outline mb-4">
+			{{ form_row(form.gender) }}
+		</div>
+
+		<div class="form-outline mb-4">
+			{{ form_row(form.roles) }}
+		</div>
+
+		<div class="form-outline mb-4">
+			{{ form_row(form.plainPassword) }}
+		</div>
+
+
+		{{ form_end(form) }}
+	</div>
+
+
+{% endblock %}

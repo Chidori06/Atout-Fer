@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Atout Fer! - Détail Commande
+{% endblock %}
+
+
+{% block body %}
+	<div class="container">
+		<h1 class="titre">Edition de la commande n°
+			<span class="nb">{{order.id}}<span>:</h1>
+				<a class="btn btn-green mb-4" href="{{ path('app_order') }}">Retour sur la liste</a>
+				<div>
+					<p>Commandé par :
+						{{ order.user.lastname|upper }}
+						{{ order.user.firstname }}</p>
+					<p>Adresse :
+						{{order.address.number}}
+						{{order.address.street}}
+						{{order.address.postcode}}
+						{{order.address.city}}</p>
+					<p>{{order.user.email}}</p>
+					<p>Statut actuel de la commande :
+						{{ order.statusOrder.name }}
+					</p>
+				</div>
+				{{form(form)}}
+				</div>
+			{% endblock %}

@@ -1,0 +1,72 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Atout Fer! - Catégories
+{% endblock %}
+
+{% block stylesheets %}
+	<link href="{{ asset('assets/libs/datatables/css/datatables.css') }}" rel="stylesheet">
+	<link href="{{ asset('assets/libs/datatables/css/datatables-bootstrap5.min.css') }}" rel="stylesheet">
+{% endblock %}
+
+{% block body %}
+
+
+	<div class="container">
+		<h1 class="titre">Les catégories :</h1>
+		<a class="btn btn-green mb-4" href="{{path('app_category_add')}}">Ajouter une catégorie</a>
+
+		{# Si jamais il n'y a pas de catégories, on affiche le texte, sinon le datatable #}
+		{% if categories|length == 0 %}
+			<div class="text-center text-dark">Aucune catégorie disponible</div>
+		{% else %}
+			<table id="tableau" class="table table-striped" style="width:100%">
+				<thead>
+					<tr>
+						<th>#</th>
+						<th>Catégories</th>
+						<th></th>
+						<th>Image</th>
+						<th>Actions</th>
+					</tr>
+				</thead>
+				<tbody>
+					{# On va chercher les éléments de Category #}
+
+					{% for category in categories %}
+						<tr>
+
+							<td>{{category.id}}</td>
+							{% if category.parent %}
+								<td>{{ category.parent.name }}</td>
+							{% else %}
+								<td>-</td>
+							{% endif %}
+							<td>{{ category.name }}</td>
+							<td>
+								<img src="{{ asset('uploads/categories/'~ category.image ) }}" alt="image de {{ category.name }}" style="max-width:50px">
+
+							</td>
+							<td>
+								<a href="{{ path('app_category_edit', {'id': category.id}) }}">Editer</a>
+								<a href="{{ path('app_category_delete', {'id': category.id}) }}">Supprimer</a>
+							</td>
+						</tr>
+					</tr>
+				{% endfor %}
+			</tbody>
+			<tfoot>
+				<tr>
+					<th>#</th>
+					<th>Catégories</th>
+					<th></th>
+					<th>Image</th>
+					<th>Actions</th>
+				</tr>
+			</tfoot>
+		</table>
+	{% endif %}
+</div>{% endblock %}{% block javascripts %}
+<script src="{{ asset('assets/libs/datatables/js/jquery.js')}}"></script>
+<script src="{{ asset('assets/libs/datatables/js/datatables-bootstrap5.min.js')}}"></script>
+<script src="{{ asset('assets/libs/datatables/js/jquery-datatables.js')}}"></script>
+<script src="{{ asset('assets/libs/js/category/init-dt.js')}}"></script>{% endblock %}

@@ -1,0 +1,63 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Atout Fer! - Employés
+{% endblock %}
+
+{% block stylesheets %}
+	<link href="{{ asset('assets/libs/datatables/css/datatables.css') }}" rel="stylesheet">
+	<link href="{{ asset('assets/libs/datatables/css/datatables-bootstrap5.min.css') }}" rel="stylesheet">
+{% endblock %}
+
+{% block body %}
+	<div class="container">
+		<h1 class="titre">Liste des utilisateurs:</h1>
+		<a class="btn btn-green mb-4" href="{{path('app_register')}}">Ajouter un employé</a>
+		{% if users|length == 0 %}
+			<div class="text-center text-dark">Aucun listing disponible</div>
+		{% else %}
+			<table id="tableau" class="table table-striped" style="width:100%">
+
+				<thead>
+					<tr>
+						<th>#</th>
+						<th>Utilisateurs</th>
+						<th>Rôles</th>
+						<th>Actions</th>
+					</tr>
+				</thead>
+				<tbody>
+					{% for user in users %}
+						<tr>
+
+							<td>{{user.id}}</td>
+							<td>{{ user.lastname|upper }}
+								{{ user.firstname}}</td>
+							<td scope="col">
+								{% for role in user.roles %}
+									{{ role }}
+								{% endfor %}
+							</td>
+							<td>
+								<a href="{{ path('app_user_edit', {'id': user.id}) }}">Editer</a>
+								<a href="{{ path('app_user_delete', {'id': user.id}) }}">Supprimer</a>
+							</td>
+						</tr>
+					</tr>
+				{% endfor %}
+			</tbody>
+			<tfoot>
+				<tr>
+					<th>#</th>
+					<th>Utilisateurs</th>
+					<th>Rôles</th>
+					<th>Actions</th>
+
+				</tr>
+			</tfoot>
+		</table>
+	{% endif %}
+</div>{% endblock %}{% block javascripts %}
+<script src="{{ asset('assets/libs/datatables/js/jquery.js')}}"></script>
+<script src="{{ asset('assets/libs/datatables/js/datatables-bootstrap5.min.js')}}"></script>
+<script src="{{ asset('assets/libs/datatables/js/jquery-datatables.js')}}"></script>
+<script src="{{ asset('assets/libs/js/category/init-dt.js')}}"></script>{% endblock %}

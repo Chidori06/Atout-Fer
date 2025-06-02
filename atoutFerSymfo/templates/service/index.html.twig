@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Atout Fer! - Services
+{% endblock %}
+
+{% block body %}
+	<div class="container">
+		<h1 class="titre">Les services :</h1>
+		<a class="btn btn-green mb-4" href="{{path('app_service_add')}}">Ajouter un service</a>
+		{% if services|length == 0 %}
+			<p>Aucun service n'a été trouvé...</p>
+
+		</div>
+	{% else %}
+		<div class="row gap-2">
+			{% for service in services %}
+				<div class="card border-color" style="width: 18rem;">
+					<img src="{{ asset('uploads/services/'~ service.image ) }}" style="max-width:100px" class="card-img-top m-auto" alt="image de {{service.name}}">
+
+					<h5 class="card-title text-center">{{service.name}}</h5>
+					<div class="text-center">
+						<p class="card-text">{{ service.description }}</p>
+						<a class="btn btn-green mb-4" href="{{ path('app_service_edit', {'id': service.id}) }}">Editer</a>
+						<a class="btn btn-green mb-4" href="{{ path('app_service_delete', {'id': service.id}) }}">Supprimer</a>
+					</div>
+				</div>
+			{% endfor %}
+		</div>
+	{% endif %}
+</div>{% endblock %}

@@ -1,0 +1,71 @@
+<div class="prenav d-none d-md-flex d-flex align-items-center justify-content-evenly">
+	<a href="tel:04735595">
+		<i class="fa-solid fa-phone fa-flip-horizontal" style="color: #ffffff;"></i>
+		+33 4 73 55 95</a>
+	<a href="mailto:contact-atoutfer@atoutfer.fr">
+		<i class="fa-solid fa-envelope" style="color: #ffffff;"></i>
+		contact-atoutfer@atoutfer.fr</a>
+	<a href="#">
+		<i class="fa-solid fa-house" style="color: #ffffff;"></i>
+		24 avenue du Fer - 63000 Clermont-Ferrand</a>
+	<div>
+		<a href="#">
+			<i class="fa-brands fa-facebook fa-lg" style="color: #ffffff;"></i>
+		</a>
+		<a href="#">
+			<i class="fa-brands fa-instagram fa-lg" style="color: #ffffff;"></i>
+		</a>
+		<a href="">
+			<i class="fa-brands fa-x-twitter fa-lg" style="color: #ffffff;"></i>
+		</a>
+	</div>
+</div>
+<nav class="navbar navbar-expand-lg">
+	<div class="container">
+		<a class="navbar-brand titre" href="{{ path('app_default') }}"><img src="{{ asset('img/logo-blanc.svg')}}" style="max-width:100px; max-height:200px">Atout Fer !</a>
+		<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse align-items-center justify-content-around" id="navbarNav">
+			<ul class="navbar-nav">
+				{% if app.user %}
+					{% if "ROLE_ADMIN" in app.user.roles %}
+						<li class="nav-item">
+							<a class="nav-link" aria-current="page" href="{{ path('app_category') }}">Catégories</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" aria-current="page" href="{{ path('app_service') }}">Services</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" aria-current="page" href="{{ path('app_category_service') }}">Catégories/Services</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" aria-current="page" href="{{ path('app_user') }}">Utilisateurs</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" aria-current="page" href="{{ path('app_order') }}">Commandes</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" aria-current="page" href="{{ path('app_review') }}">Avis Clients</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="{{ path('app_logout') }}">Se déconnecter</a>
+						</li>
+					{% elseif "ROLE_EMPLOYEE" in app.user.roles %}
+						<li class="nav-item">
+							<a class="nav-link" aria-current="page" href="{{ path('app_category_service') }}">Catégories/Services</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" aria-current="page" href="{{ path('app_order') }}">Commandes</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="{{ path('app_logout') }}">Se déconnecter</a>
+						</li>
+					</li<liclass="nav-item">
+				{% else %}
+					<a class="nav-link" href="{{ path('app_logout') }}">Retour sur la page de connexion</a>
+				</li>
+			{% endif %}
+		{% endif %}
+	</ul>
+</div></div></nav>

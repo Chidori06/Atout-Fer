@@ -1,0 +1,53 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Atout Fer! - Détail Commande
+{% endblock %}
+
+
+{% block body %}
+	<div class="container">
+		<h1 class="titre">Détail de la commande n°
+			<span class="nb fs-2">{{order.id}}<span>:</h1>
+
+				<a class="btn btn-green mb-4" href="{{ path('app_order') }}">Retour sur la liste</a>
+				<div>
+					<p>Commandé par :
+						{{ order.user.lastname|upper }}
+						{{ order.user.firstname }}</p>
+					<p>{{order.address.number}}
+						{{order.address.street}}
+						{{order.address.postcode}}
+						{{order.address.city}}</p>
+					<p>{{order.user.email}}</p>
+
+					<table class="table table-striped">
+
+						<thead>
+							<tr>
+								<th>Catégorie</th>
+								<th>Service</th>
+								<th>Prix unitaire</th>
+
+							</tr>
+
+						</thead>
+						<tbody>
+
+							{% for line in order.linesOrder %}
+								<tr>
+									<td>{{ line.catServLines.categories.name}}</td>
+									<td>{{ line.catServLines.services.name}}</td>
+									<td>{{ line.catServLines.price}}€</td>
+								</tr>
+							{% endfor %}
+						</tbody>
+					</table>
+				</div>
+				<h3 class="text-end">Prix total :
+					{{order.total}}€
+				</h3>
+
+			</div>
+
+
+		{% endblock %}
